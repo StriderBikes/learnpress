@@ -3,7 +3,7 @@
 // Prevent loading directly
 defined( 'ABSPATH' ) || exit;
 
-if ( ! class_exists( 'LP_Multi_Language' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Multi_Language' ) ) {
 	/**
 	 * Class LP_Multi_Language
 	 *

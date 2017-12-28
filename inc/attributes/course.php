@@ -5,7 +5,7 @@
  *
  * @since 2.1.4
  */
-if ( !class_exists( 'LP_Course_Attributes' ) ) {
+if ( !learn_press_is_loaded_class('LP_Course_Attributes' ) ) {
 	/**
 	 * Class LP_Course_Attributes
 	 */

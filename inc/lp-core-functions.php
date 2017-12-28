@@ -17,6 +17,14 @@ if ( ! empty( $_REQUEST['debug'] ) ) {
 	require_once( 'debug.php' );
 }
 
+function learn_press_is_loaded_class( $class ) {
+	static $classes = array();
+	$is_loaded         = ! empty( $classes[ $class ] );
+	$classes[ $class ] = true;
+
+	return $is_loaded;
+}
+
 /**
  * Get instance of a CURD class by type
  *

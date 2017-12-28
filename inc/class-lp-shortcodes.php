@@ -13,7 +13,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Shortcodes' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Shortcodes' ) ) {
 	/**
 	 * LP_Shortcodes class
 	 */

@@ -14,7 +14,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Shortcode_Button_Enroll' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Shortcode_Button_Enroll' ) ) {
 
 	/**
 	 * Class LP_Shortcode_Button_Enroll

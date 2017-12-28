@@ -14,7 +14,7 @@
 defined( 'ABSPATH' ) || exit();
 
 
-if ( ! class_exists( 'LP_Abstract_Shortcode' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Abstract_Shortcode' ) ) {
 
 	/**
 	 * Class LP_Abstract_Shortcode

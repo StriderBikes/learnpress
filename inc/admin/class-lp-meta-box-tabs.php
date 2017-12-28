@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Meta_Box_Tabs' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Meta_Box_Tabs' ) ) {
 	/**
 	 * Class LP_Meta_Box_Tabs
 	 *

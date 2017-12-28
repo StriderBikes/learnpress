@@ -2,7 +2,7 @@
 /**
  * Admin tools
  */
-if ( ! class_exists( 'LP_Admin_Tools' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Admin_Tools' ) ) {
 	/**
 	 * Class LP_Admin_Tools
 	 */

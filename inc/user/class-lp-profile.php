@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 include_once "class-lp-profile-tabs.php";
 
-if ( ! class_exists( 'LP_Profile' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Profile' ) ) {
 	/**
 	 * Class LP_Profile
 	 *

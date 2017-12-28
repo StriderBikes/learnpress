@@ -13,7 +13,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Email_Cancelled_Order_Instructor' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Email_Cancelled_Order_Instructor' ) ) {
 
 	class LP_Email_Cancelled_Order_Instructor extends LP_Email_Type_Order {
 		/**

@@ -4,7 +4,7 @@
  * @package LearnPress/Classes
  * @version 1.0
  */
-if ( ! class_exists( 'LP_Order_Post_Type' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Order_Post_Type' ) ) {
 
 	// class LP_Order_Post_Type
 	final class LP_Order_Post_Type extends LP_Abstract_Post_Type {

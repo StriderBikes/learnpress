@@ -14,7 +14,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Widget_Popular_Courses' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Widget_Popular_Courses' ) ) {
 
 	/**
 	 * Class LP_Widget_Popular_Courses

@@ -12,7 +12,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Question' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Question' ) ) {
 
 	/**
 	 * Class LP_Question

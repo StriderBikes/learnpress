@@ -21,6 +21,9 @@ defined( 'ABSPATH' ) || exit();
 // show every possible error
 error_reporting( - 1 );
 
+if ( ! empty( $_REQUEST['xxx'] ) ) {
+	return;
+}
 if ( ! defined( 'LP_PLUGIN_FILE' ) ) {
 	define( 'LP_PLUGIN_FILE', __FILE__ );
 	require_once dirname( __FILE__ ) . '/inc/lp-constants.php';
@@ -147,6 +150,7 @@ if ( ! class_exists( 'LearnPress' ) ) {
 		 * Includes needed files.
 		 */
 		public function includes() {
+			require_once 'inc/lp-core-functions.php';
 			require_once 'inc/class-lp-factory.php';
 			require_once 'inc/class-lp-datetime.php';
 			require_once 'inc/class-lp-hard-cache.php';
@@ -183,7 +187,7 @@ if ( ! class_exists( 'LearnPress' ) ) {
 			require_once 'inc/user-item/class-lp-user-item-course.php';
 			require_once 'inc/lp-deprecated.php';
 			require_once 'inc/class-lp-cache.php';
-			require_once 'inc/lp-core-functions.php';
+			//require_once 'inc/lp-core-functions.php';
 			require_once 'inc/class-lp-autoloader.php';
 			require_once 'inc/class-lp-install.php';
 			require_once 'inc/lp-webhooks.php';
@@ -254,6 +258,14 @@ if ( ! class_exists( 'LearnPress' ) ) {
 			require_once 'inc/class-lp-multi-language.php';
 			require_once 'inc/class-lp-page-controller.php';
 
+			// widgets
+			require_once 'inc/widgets/featured-courses/featured-courses.php';
+			require_once 'inc/widgets/popular-courses/popular-courses.php';
+			require_once 'inc/widgets/recent-courses/recent-courses.php';
+			require_once 'inc/class-lp-forms-handler.php';
+			require_once 'inc/gateways/paypal/class-lp-gateway-paypal.php';
+			require_once 'inc/class-lp-checkout.php';
+			require_once 'inc/class-lp-helper.php';
 
 			require_once 'inc/class-lp-schedules.php';
 

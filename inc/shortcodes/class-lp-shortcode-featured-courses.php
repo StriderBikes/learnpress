@@ -14,7 +14,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Shortcode_Featured_Courses' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Shortcode_Featured_Courses' ) ) {
 
 	/**
 	 * Class LP_Shortcode_Featured_Courses

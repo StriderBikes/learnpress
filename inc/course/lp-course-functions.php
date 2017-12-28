@@ -606,7 +606,7 @@ if ( ! function_exists( 'learn_press_get_course_item_url' ) ) {
 	}
 }
 
-add_filter( 'get_comment_link', 'learn_press_item_comment_link', 100, 4 );
+//add_filter( 'get_comment_link', 'learn_press_item_comment_link', 100, 4 );
 function learn_press_item_comment_link( $link, $comment, $args, $cpage ) {
 
 	if ( $course_id = learn_press_get_item_course_id( $comment->comment_post_ID, LP_QUIZ_CPT ) ) {

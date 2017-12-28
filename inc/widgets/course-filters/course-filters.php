@@ -1,5 +1,5 @@
 <?php
-if ( !class_exists( 'LP_Widget_Course_Filters' ) ) {
+if ( !learn_press_is_loaded_class('LP_Widget_Course_Filters' ) ) {
 	/**
 	 * Class LP_Widget_Course_Filters
 	 */

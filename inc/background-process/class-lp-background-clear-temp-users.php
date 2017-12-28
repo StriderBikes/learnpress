@@ -11,7 +11,7 @@ if ( ! class_exists( 'WP_Background_Process', false ) ) {
 	include_once( LP_PLUGIN_PATH . '/inc/libraries/wp-background-process.php' );
 }
 
-if ( ! class_exists( 'LP_Background_Clear_Temp_Users' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Background_Clear_Temp_Users' ) ) {
 	/**
 	 * Class LP_Background_Clear_Temp_Users
 	 *

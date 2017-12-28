@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-if ( ! class_exists( 'LP_AJAX' ) ) {
+if ( ! learn_press_is_loaded_class('LP_AJAX' ) ) {
 	/**
 	 * Class LP_AJAX
 	 */

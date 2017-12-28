@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit();
 
-if ( !class_exists( 'LP_Statistic_Status' ) ) :
+if ( !learn_press_is_loaded_class('LP_Statistic_Status' ) ) :
 
 	class LP_Statistic_Status {
 

@@ -12,7 +12,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Quiz_Factory' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Quiz_Factory' ) ) {
 
 	/**
 	 * Class LP_Quiz_Factory

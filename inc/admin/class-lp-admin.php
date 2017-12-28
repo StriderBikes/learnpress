@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'LP_Admin' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Admin' ) ) {
 	/**
 	 * Class LP_Admin
 	 */

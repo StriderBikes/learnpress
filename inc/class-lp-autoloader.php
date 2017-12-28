@@ -20,7 +20,12 @@ class LP_Autoloader {
 	 */
 	private $include_path = '';
 
+	/**
+	 * @var int
+	 */
 	protected $time = 0;
+
+	protected $files = array();
 
 	/**
 	 * The Constructor
@@ -38,6 +43,14 @@ class LP_Autoloader {
 	}
 
 	public function output_time() {
+		echo "<!---\n";
+		echo $this->time . "\n";
+		if ( $this->files ) {
+			foreach ( $this->files as $file ) {
+				echo "{$file}\n";
+			}
+		}
+		echo "--->";
 	}
 
 	/**
@@ -109,8 +122,9 @@ class LP_Autoloader {
 				}
 			}
 		}
-		$this->time += ( microtime( true ) - $start );
 		$this->load_file( $path . $file );
+		$this->time += ( microtime( true ) - $start );
+		$this->files[$class] = $path . $file ;
 	}
 }
 

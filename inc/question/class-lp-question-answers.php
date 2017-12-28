@@ -12,7 +12,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Question_Answers' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Question_Answers' ) ) {
 
 	/**
 	 * Class LP_Question_Answers
@@ -239,7 +239,7 @@ if ( ! class_exists( 'LP_Question_Answers' ) ) {
 	}
 }
 
-if ( ! class_exists( 'LP_Question_Answer_Option' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Question_Answer_Option' ) ) {
 	/**
 	 * Class LP_Question_Answer_Option
 	 *

@@ -13,7 +13,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Abstract_User' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Abstract_User' ) ) {
 
 	/**
 	 * Class LP_Abstract_User
@@ -2671,77 +2671,6 @@ if ( ! class_exists( 'LP_Abstract_User' ) ) {
 			}
 
 			return apply_filters( 'learn_press_user_questions', $questions[ $key ], $this );
-		}
-
-		/**
-		 * @param array $args
-		 *
-		 * @return mixed
-		 */
-		public function get_courses( $args = array() ) {
-			global $wpdb;
-			static $courses = array();
-			$args = wp_parse_args(
-				$args,
-				array(
-					'status'  => '',
-					'limit'   => - 1,
-					'paged'   => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
-					'orderby' => 'post_title',
-					'order'   => 'ASC',
-					'user_id' => $this->get_id()
-				)
-			);
-			ksort( $args );
-			$key = md5( serialize( $args ) );
-			if ( empty( $courses[ $key ] ) ) {
-				$where = $args['status'] ? $wpdb->prepare( "AND uc.status = %s", $args['status'] ) : '';
-				$limit = "\n";
-				if ( $args['limit'] > 0 ) {
-					if ( ! $args['paged'] ) {
-						$args['paged'] = 1;
-					}
-					$start = ( $args['paged'] - 1 ) * $args['limit'];
-					$limit .= "LIMIT " . $start . ',' . $args['limit'];
-				}
-				$order = "\nORDER BY " . ( $args['orderby'] ? $args['orderby'] : 'post_title' ) . ' ' . $args['order'];
-				$query = $wpdb->prepare( "
-				SELECT SQL_CALC_FOUND_ROWS * FROM(
-					SELECT c.*, uc.status as course_status
-					FROM {$wpdb->posts} c
-					LEFT JOIN {$wpdb->prefix}learnpress_user_items uc ON c.ID = uc.item_id AND uc.user_id = %d
-					WHERE post_type = %s
-						AND ( c.post_status = %s OR c.post_status = %s)
-						AND post_author = %d
-					UNION
-					SELECT c.*, uc.status as course_status
-					FROM {$wpdb->posts} c
-					INNER JOIN {$wpdb->prefix}learnpress_user_items uc ON c.ID = uc.item_id
-					WHERE uc.user_id = %d
-						AND c.post_type = %s
-						AND c.post_status = %s
-				) a GROUP BY a.ID
-			", $args['user_id'],
-					LP_COURSE_CPT, 'publish', 'draft', $this->get_id(),
-					$args['user_id'], LP_COURSE_CPT, 'publish'
-				);
-				$query .= $where . $order . $limit;
-
-				$data          = array(
-					'rows' => $wpdb->get_results( $query, OBJECT_K )
-				);
-				$data['count'] = $wpdb->get_var( "SELECT FOUND_ROWS();" );
-
-				if ( $data['rows'] ) {
-					$course_ids = array_keys( $data['rows'] );
-					learn_press_get_user_courses_info( $this->get_id(), $course_ids );
-
-				}
-				$courses[ $key ] = $data;
-			}
-			$this->_FOUND_ROWS = $courses[ $key ]['count'];
-
-			return $courses[ $key ]['rows'];
 		}
 
 		/**

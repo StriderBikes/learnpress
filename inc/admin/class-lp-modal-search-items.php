@@ -13,7 +13,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Modal_Search_Items' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Modal_Search_Items' ) ) {
 
 	/**
 	 * Class LP_Modal_Search_Items

@@ -1,5 +1,5 @@
 <?php
-if ( ! class_exists( 'LP_Admin_Dashboard' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Admin_Dashboard' ) ) {
 	/**
 	 * Class LP_Admin_Dashboard
 	 *

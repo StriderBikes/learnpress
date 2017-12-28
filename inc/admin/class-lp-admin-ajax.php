@@ -13,7 +13,7 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( 'LP_Admin_Ajax' ) ) {
+if ( ! learn_press_is_loaded_class('LP_Admin_Ajax' ) ) {
 
 	/**
 	 * Class LP_Admin_Ajax
