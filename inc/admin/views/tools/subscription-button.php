@@ -4,7 +4,7 @@
  *
  * @author ThimPress
  * @package LearnPress/Admin/Views
- * @version 3.0.10
+ * @version 3.1.0
  */
 
 defined('ABSPATH') or die();

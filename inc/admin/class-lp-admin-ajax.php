@@ -191,7 +191,7 @@ if ( ! class_exists( 'LP_Admin_Ajax' ) ) {
 		/**
 		 * Send data to join newsletter or dismiss
 		 *
-		 * @since 3.0.10
+		 * @since 3.1.0
 		 */
 		public static function join_newsletter() {
 			$context = LP_Request::get_string( 'context' );

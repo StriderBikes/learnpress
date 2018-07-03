@@ -666,7 +666,7 @@ if ( ! function_exists( 'learn_press_get_course_item_url' ) ) {
 /**
  * Add filter to WP comment form of lesson or quiz to output ID of current course.
  *
- * @since 3.0.10
+ * @since 3.1.0
  *
  * @param $post_id
  */
@@ -716,7 +716,7 @@ add_filter( 'get_comment_link', 'learn_press_item_comment_link', 100, 4 );
 /**
  * Fix redirection invalid when SG Cache is installed
  *
- * @since 3.0.10
+ * @since 3.1.0
  *
  * @param int    $comment_id
  * @param string $status
