@@ -96,13 +96,14 @@ if ( ! function_exists( 'LP_Lesson' ) ) {
 				)
 			);
 			$image = false;
-			if ( has_post_thumbnail( $this->id ) ) {
-				$image = get_the_post_thumbnail( $this->id, $size, $attr );
-			} elseif ( ( $parent_id = wp_get_post_parent_id( $this->id ) ) && has_post_thumbnail( $parent_id ) ) {
+			$lessonId = $this->get_id();
+			if ( has_post_thumbnail($lessonId) ) {
+				$image = get_the_post_thumbnail( $lessonId, $size, $attr );
+			} elseif ( ( $parent_id = wp_get_post_parent_id( $lessonId ) ) && has_post_thumbnail( $parent_id ) ) {
 				$image = get_the_post_thumbnail( $parent_id, $size, $attr );
 			}
 	
-			return apply_filters( 'learn_press_course_image', $image, $this->id, $size, $attr );
+			return apply_filters( 'learn_press_course_image', $image, $lessonId, $size, $attr );
 		}
 		/**
 		 * @param $tag
