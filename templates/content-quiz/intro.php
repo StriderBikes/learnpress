@@ -21,10 +21,6 @@ $count  = $quiz->get_retake_count();
 
 <ul class="quiz-intro">
     <li>
-        <label><?php _e( 'Attempts allowed', 'learnpress' ); ?></label>
-        <span><?php echo ( null == $count || 0 > $count ) ? __( 'Unlimited', 'learnpress' ) : ( $count ? $count : __( 'No', 'learnpress' ) ); ?></span>
-    </li>
-    <li>
         <label><?php _e( 'Duration', 'learnpress' ); ?></label>
         <span><?php echo $quiz->get_duration_html(); ?></span>
     </li>

@@ -28,8 +28,7 @@ $quiz_data = $user->get_item_data( $quiz->get_id(), $course->get_id() );
 
 	<?php do_action( 'learn-press/begin-quiz-redo-button' ); ?>
 
-    <button type="submit"
-            data-counter="<?php echo $quiz_data->can_retake_quiz(); ?> "><?php _e( 'Redo', 'learnpress' ); ?></button>
+    <button type="submit"><?php _e( 'Redo', 'learnpress' ); ?></button>
 
 	<?php do_action( 'learn-press/end-quiz-redo-button' ); ?>
 
