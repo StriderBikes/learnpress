@@ -226,6 +226,7 @@ if ( ! class_exists( 'LP_Lesson_Post_Type' ) ) {
 					'supports'           => array(
 						'title',
 						'editor',
+						'thumbnail',
 						'post-formats',
 						'revisions',
 						'comments'
