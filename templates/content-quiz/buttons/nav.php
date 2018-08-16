@@ -65,7 +65,7 @@ $current_question_id = $quiz->get_viewing_question( 'id' );
 <?php if ( ( $next_id = $user->get_next_question( $quiz->get_id(), $course_id ) ) && ! $user->has_completed_quiz( $quiz->get_id(), $course_id ) ) { ?>
 
 	<?php do_action( 'learn-press/quiz/before-skip-question-button' ); ?>
-
+<!--
     <form name="skip-question" class="skip-question form-button lp-form" method="post"
           action="<?php echo $quiz->get_question_link( $next_id ); ?>">
 
@@ -78,7 +78,7 @@ $current_question_id = $quiz->get_viewing_question( 'id' );
 
 		<?php LP_Nonce_Helper::quiz_action( 'nav-question', $quiz->get_id(), $course_id ); ?>
     </form>
-
+-->
 	<?php do_action( 'learn-press/quiz/after-skip-question-button' ); ?>
 
 <?php } ?>
