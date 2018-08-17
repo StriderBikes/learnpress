@@ -65,24 +65,4 @@ $has_checked =  $user->has_checked_answer( $current_question_id, $quiz->get_id()
 <?php } ?>
 <?php } ?>
 
-<?php if ( ( $next_id = $user->get_next_question( $quiz->get_id(), $course_id ) ) && ! $user->has_completed_quiz( $quiz->get_id(), $course_id ) ) { ?>
-
-	<?php do_action( 'learn-press/quiz/before-skip-question-button' ); ?>
-
-    <form name="skip-question" class="skip-question form-button lp-form" method="post"
-          action="<?php echo $quiz->get_question_link( $next_id ); ?>">
-
-		<?php do_action( 'learn-press/quiz/begin-skip-question-button' ); ?>
-
-        <button type="submit"><?php echo esc_html_x( 'Skip', 'quiz-question-navigation', 'learnpress' ); ?></button>
-        <input type="hidden" name="question-id" value="<?php echo $current_question_id; ?>">
-
-		<?php do_action( 'learn-press/quiz/end-skip-question-button' ); ?>
-
-		<?php LP_Nonce_Helper::quiz_action( 'nav-question', $quiz->get_id(), $course_id ); ?>
-    </form>
-
-	<?php do_action( 'learn-press/quiz/after-skip-question-button' ); ?>
-
-<?php } ?>
 
