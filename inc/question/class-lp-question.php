@@ -258,7 +258,12 @@ if ( ! class_exists( 'LP_Question' ) ) {
 		 * @return mixed
 		 */
 		public function get_explanation() {
-			return apply_filters( 'learn-press/question/explanation', do_shortcode( $this->get_data( 'explanation' ) ), $this->get_id() );
+			$checkResponse = $this->check($this->get_answered());
+			if (!$checkResponse['correct']){
+				return apply_filters( 'learn-press/question/explanation', do_shortcode( $this->get_data( 'explanation' ) ), $this->get_id() );
+			} else {
+				return apply_filters( 'learn-press/question/explanation_correct', get_post_meta($this->get_id(), '_lp_explanation_correct', true), $this->get_id() );
+			}
 		}
 
 		/**

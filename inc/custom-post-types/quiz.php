@@ -346,6 +346,32 @@ if ( ! class_exists( 'LP_Quiz_Post_Type' ) ) {
 						'max'  => 100
 					),
 					array(
+						'name' => __( 'Show Check Answer', 'learnpress' ),
+						'id'   => '_lp_show_check_answer',
+						'type' => 'number',
+						'desc' => __( 'Show button to check answer while doing quiz ( 0 = Disabled, -1 = Unlimited, N = Number of check ).', 'learnpress' ),
+						'std'  => '0',
+						'min'  => - 1,
+						'max'  => 100
+					),
+					array(
+						'name' => __( 'Hide next until Submit Clicked', 'learnpress' ),
+						'id'   => "_lp_show_submit_hide_next",
+						'type' => 'yes_no',
+						'desc' => __( 'Conditionally shows the correct/incorrect answer message after clicking Submit, hides next button until then', 'learnpress' ),
+						'std'  => 'no',
+						'visibility' => array(
+							'state'       => 'show',
+							'conditional' => array(
+								array(
+									'field'   => '_lp_show_check_answer',
+									'compare' => '!=',
+									'value'   => '0'
+								)
+							)
+						)
+					),
+					array(
 						'name' => __( 'Show Hint', 'learnpress' ),
 						'id'   => '_lp_show_hint',
 						'type' => 'number',

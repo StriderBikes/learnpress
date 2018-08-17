@@ -49,7 +49,7 @@ if ( ! class_exists( 'LP_Question_Single_Choice' ) ) {
 		 */
 		public function check( $user_answer = null ) {
 			$return = parent::check();
-
+			$return['userAnswer'] = $user_answer;
 			if ( $answers = $this->get_answers() ) {
 				foreach ( $answers as $key => $option ) {
 					if ( ( $option['is_true'] == 'yes' ) && ( $this->is_selected_option( $option, $user_answer ) ) ) {
