@@ -363,6 +363,13 @@ if ( ! class_exists( 'LP_Quiz_Post_Type' ) ) {
 						)
 					),
 					array(
+						'name' => __( 'Hide Finish Quiz until last Question', 'learnpress' ),
+						'id'   => "_lp_hide_finish_until_last",
+						'type' => 'yes_no',
+						'desc' => __( 'hides/disables the finish quiz button until the last question.', 'learnpress' ),
+						'std'  => 'no'
+					),
+					array(
 						'name' => __( 'Show Hint', 'learnpress' ),
 						'id'   => '_lp_show_hint',
 						'type' => 'number',
