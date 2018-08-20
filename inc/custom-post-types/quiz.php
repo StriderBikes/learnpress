@@ -345,6 +345,7 @@ if ( ! class_exists( 'LP_Quiz_Post_Type' ) ) {
 						'min'  => - 1,
 						'max'  => 100
 					),
+					/*
 					array(
 						'name' => __( 'Hide next until Submit Clicked', 'learnpress' ),
 						'id'   => "_lp_show_submit_hide_next",
@@ -361,7 +362,8 @@ if ( ! class_exists( 'LP_Quiz_Post_Type' ) ) {
 								)
 							)
 						)
-					),
+					), 
+					*/
 					array(
 						'name' => __( 'Hide Finish Quiz until last Question', 'learnpress' ),
 						'id'   => "_lp_hide_finish_until_last",
