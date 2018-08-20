@@ -45,6 +45,7 @@ $has_checked =  $user->has_checked_answer( $current_question_id, $quiz->get_id()
 <?php } ?>
 
 <?php if ( $next_id = $user->get_next_question( $quiz->get_id(), $course_id ) ) { ?>
+<?php if (!($hide_next == 'no' || $has_checked) { ?>
 	<?php do_action( 'learn-press/quiz/before-next-question-button' ); ?>
 
     <form name="next-question" class="next-question form-button lp-form" method="post"
@@ -61,6 +62,7 @@ $has_checked =  $user->has_checked_answer( $current_question_id, $quiz->get_id()
     </form>
 
 	<?php do_action( 'learn-press/quiz/after-prev-question-button' ); ?>
+<?php } ?>
 <?php } ?>
 
 
