@@ -98,7 +98,7 @@ if ( ! function_exists( 'LP_Lesson' ) ) {
 			$image = false;
 			$lessonId = $this->get_id();
 			if ( has_post_thumbnail($lessonId) ) {
-				$image = get_the_post_thumbnail( $lessonId, 'medium', $attr );
+				$image = get_the_post_thumbnail( $lessonId, array(500,500), $attr );
 			} elseif ( ( $parent_id = wp_get_post_parent_id( $lessonId ) ) && has_post_thumbnail( $parent_id ) ) {
 				$image = get_the_post_thumbnail( $parent_id, $size, $attr );
 			}
