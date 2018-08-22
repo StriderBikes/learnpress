@@ -21,4 +21,4 @@ if ( ! $title = $lesson->get_title( 'display' ) ) {
 }
 ?>
 
-<h1 class="course-item-title question-title"><?php echo $title; ?></h1>
+<h3 class="course-item-title question-title"><?php echo $title; ?></h3>
